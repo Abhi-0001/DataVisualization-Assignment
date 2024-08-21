@@ -2,7 +2,7 @@ export function geoDistributionPipeline() {
   return [
     {
       $group: {
-        _id: "$default_address.city",
+        _id: "$default_address.country",
         count: { $sum: 1 },
       },
     },
