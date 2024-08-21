@@ -14,7 +14,11 @@ export const client = new MongoClient(`${process.env.MONGODB_URI}/${DB_NAME}`);
 async function startServer() {
   const app = express();
   app.use(express.json());
-  app.use(cors());
+  app.use(
+    cors({
+      origin: "*", // Allow requests from any origin (use cautiously)
+    })
+  );
   await connectDB(client);
 
   // Routes
