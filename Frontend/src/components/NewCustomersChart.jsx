@@ -42,7 +42,7 @@ const options = {
 
 function NewCustomersChart({ interval }) {
   const [isLoading, setIsLoading] = useState(true);
-  const [customizedData, setCustomizedData] = useState({});
+  const [chartData, setChartData] = useState({});
   const [isDataExist, setIsDataExist] = useState(true);
 
   useEffect(
@@ -77,7 +77,7 @@ function NewCustomersChart({ interval }) {
             },
           ],
         };
-        setCustomizedData(tempData);
+        setChartData(tempData);
 
         setIsLoading(false);
       }

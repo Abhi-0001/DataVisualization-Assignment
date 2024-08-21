@@ -97,7 +97,7 @@ function RepeatCustomersChart({ interval }) {
   return (
     <>
       {isLoading && <Spinner />}
-      {!isDataExist && <h2>No new customers</h2>}
+      {!isDataExist && <h2>No customers have repeated their activity</h2>}
       {!isLoading && isDataExist && <Bar data={chartData} />}
     </>
   );
