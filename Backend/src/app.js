@@ -6,6 +6,7 @@ import { dataRouter } from "./routes/data.routes.js";
 import { MongoClient } from "mongodb";
 import { customerRouter } from "./routes/customer.route.js";
 import { salesRouter } from "./routes/sales.route.js";
+import cors from "cors";
 
 dotenv.config();
 export const client = new MongoClient(`${process.env.MONGODB_URI}/${DB_NAME}`);
@@ -13,7 +14,7 @@ export const client = new MongoClient(`${process.env.MONGODB_URI}/${DB_NAME}`);
 async function startServer() {
   const app = express();
   app.use(express.json());
-
+  app.use(cors());
   await connectDB(client);
 
   // Routes

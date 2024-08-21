@@ -1,5 +1,3 @@
-import { DB_NAME } from "../utils/constants.util.js";
-
 async function connectDB(client) {
   console.clear();
   try {

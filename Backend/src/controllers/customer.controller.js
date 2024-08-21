@@ -29,6 +29,7 @@ export async function getNewCustomersInCurrentMonth(req, res) {
               $lte: endOfMonth,
             },
           },
+          count: { $sum: 1 },
         },
       ])
       .toArray();
